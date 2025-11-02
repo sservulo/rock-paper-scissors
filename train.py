@@ -1,7 +1,9 @@
 from ultralytics import YOLO
 
+LOCAL_DATASET_PATH = "/home/samuel/rock-paper-scissor-dataset/data.yaml"
+
+
 def rps():
-    LOCAL_DATASET_PATH = "/home/samuel/rock-paper-scissor-dataset/data.yaml"
     model = YOLO("yolo11n.pt")
     results = model.train(data=LOCAL_DATASET_PATH, epochs=3)
     results = model.val()  # evaluate model performance
